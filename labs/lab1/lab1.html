@@ -34,13 +34,15 @@
         }
         function calcul_t5(x, y) {
             let sum = 0;
+            x = parseInt(task5.t2_x.value);
+            y = parseInt(task5.t2_y.value);
             for (let i = 5; i <= 9; i++) {
                 const numerator = x/y + (x*x)/3;
                 const denominator = x*x * y*y * factorial(i + 1);
                 const sign = Math.pow(-1, i + 1);
                 sum += sign * numerator / denominator;
             }
-            return sum;
+            task5.t2_fin.value = sum;
         }
         function factorial(n) {
             if (n === 0 || n === 1) return 1;
@@ -80,9 +82,9 @@
     </form>
     <h3>Task 5</h3>
         <form id="task5">
-        x <input type="text" id="t_x" value="2"><br>
-        y <input type="text" id="t_y" value="4"><br>
-        fin <input type="text" id="t_fin" value=""><br>
+        x <input type="text" id="t2_x" value="2"><br>
+        y <input type="text" id="t2_y" value="4"><br>
+        fin <input type="text" id="t2_fin" value=""><br>
         <input type="button" onclick="calcul_t5();" value="Calculuy t5">
     </form>
 </body>
