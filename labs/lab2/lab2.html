@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2</title>
+</head>
+<body>
+    <div class="clock-container">
+        <h1>Поточний час та дата</h1>
+        <div id="clock" class="clock"></div>
+        <div>Формат: year-month-day-hour-min-sec</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1;
+            const day = now.getDate();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            const timeString = `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
+            
+            document.getElementById('clock').textContent = timeString;
+        }
+        
+        setInterval(updateClock, 1000);
+        
+        updateClock();
+    </script>
+</body>
+</html>
